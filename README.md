@@ -10,7 +10,7 @@ The three basic data files are:
 2. WDIData -> This describes the details of all the countries and it's indicator values from year 1960 to year 2017
 3. WDISeries -> This describes the details of all the indicators of development 
 
-The above files are uploaded into s3 buckets created in aws.
+The above files are uploaded into s3 buckets created in aws. The reason is that hdfs is difficult to maintain and we have only few files for now.
 
 ## STEPS TO EXECUTE THIS 
 
@@ -42,3 +42,7 @@ The data from the s3 bucket is read into data frames on the cluster->Using spark
 1. Cleaning the data
 2. Transform the data according to the requirements
 3. Perform data quality checks -> Finally I write the final tables back to s3 buckets.
+
+## Following phase
+
+Using Airflow I will be creating a pipeline and scheduling the jobs once a month assuming the world bank releases this data monthly.
